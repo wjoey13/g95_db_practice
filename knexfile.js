@@ -10,7 +10,7 @@ module.exports = {
 // changed client to pg because I am using postgresql
 // connected to development to the database I created with connection :'postgresql://localhost/my_g95_database'
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: process.env.DATABASE_URL
   }
 };

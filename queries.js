@@ -7,5 +7,11 @@ module.exports = {
     },
     oneStudent(id){
         return knex.select().from('student_info').where('first',id);
+    },
+    createNewStudent(newStudent){
+        return knex('student_info').insert(newStudent)
+    },
+    deleteStudentById(id){
+        return knex('student_info').where('id',id).delete()
     }
 }
