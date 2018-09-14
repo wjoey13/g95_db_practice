@@ -5,6 +5,10 @@ const queries = require('./queries');
 
 app.listen(port,() => console.log(`listening on ${port}`));
 
-app.get('/', (request,response)=> { 
+app.get('/', (request,response) => { 
     queries.listAll().then(result => { response.send({data: result})})
+} )
+
+app.get('/:id', (request,response) => {
+    queries.oneStudent(request.params.id).then(result => { response.send({data: result})})
 } )
