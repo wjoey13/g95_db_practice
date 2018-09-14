@@ -2,7 +2,11 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('student_info', (student) => {
         student.increments('id')
-        
+        student.string('first')
+        student.string('last')
+        student.float('lat')
+        student.float('long')
+        student.string('favAnimal')
     })
     //create table takes in two arguements 
 };
